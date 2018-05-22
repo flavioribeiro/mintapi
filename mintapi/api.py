@@ -47,7 +47,7 @@ def get_web_driver(email, password):
     driver = Chrome()
 
     driver.get("https://www.mint.com")
-    driver.implicitly_wait(20)  # seconds
+    driver.implicitly_wait(5)  # seconds
     driver.find_element_by_link_text("Log In").click()
 
     driver.find_element_by_id("ius-userid").send_keys(email)
@@ -60,7 +60,7 @@ def get_web_driver(email, password):
         time.sleep(1)
 
     # Wait until the overview page has actually loaded.
-    driver.implicitly_wait(20)  # seconds
+    driver.implicitly_wait(5)  # seconds
     driver.find_element_by_id("transaction")
 
     return driver
